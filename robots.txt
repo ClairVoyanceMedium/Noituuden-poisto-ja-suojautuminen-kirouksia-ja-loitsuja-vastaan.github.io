@@ -1,42 +1,100 @@
-# Indique aux robots que toutes les pages peuvent être explorées, sauf restrictions spécifiées
+# Robots.txt optimisé pour 2025 - Conçu pour surpasser l'excellence en Finlande
+# Adapté pour le public finlandais, l'IA, Google IA, assistants vocaux et SEO avancé
+# Site : https://clairvoyancemedium.github.io/Noituuden-poisto-ja-suojautuminen-kirouksia-ja-loitsuja-vastaan.github.io/
+# Dernière mise à jour : 13/04/2025 14:00 GMT
+# Note : Valider avec Google Search Console et robotstxt.org
+
+##########################
+# Autorisation Générale  #
+##########################
 User-agent: *
-Disallow: /admin/
-Disallow: /tmp/
-Disallow: /private/
+Disallow: /yksityinen/       # Répertoires privés (ex. admin, scripts)
+Disallow: /tilapainen/       # Dossiers temporaires
+Disallow: /*?*               # Évite contenu dupliqué (paramètres URL)
+Allow: /*.css$               # CSS pour rendu optimal
+Allow: /*.js$                # JS essentiel
+Allow: /*.pdf$               # Autorise les PDF stratégiques (ex. oppaat)
+Allow: /                     # Autorisation par défaut
 
-# Bloquer des URL avec paramètres inutiles pour l'indexation
-Disallow: /*?debug=true
-Disallow: /*?preview=true
-
-# Permettre les fichiers nécessaires au bon affichage et fonctionnement
-Allow: /css/
-Allow: /js/
-Allow: /images/
-
-# Référencement des ressources multimédias
-Allow: *.png
-Allow: *.jpg
-Allow: *.webp
-Allow: *.css
-Allow: *.js
-
-# Fournir le chemin du fichier sitemap pour une meilleure indexation
-Sitemap: https://www.clairvoyancemedium.com/sitemap.xml
-
-# Autorisation pour les robots Google et Bing pour maximiser les campagnes publicitaires
+########################################
+# Googlebot (y compris Google IA 2025) #
+########################################
 User-agent: Googlebot
-Allow: /
-User-agent: AdsBot-Google
-Allow: /
+Disallow: /yksityinen/
+Disallow: /tilapainen/
+Allow: /riitit/
+Allow: /suojaus/
+Allow: /noituuden-poisto/
+
+###########################################
+# Assistants vocaux                       #
+###########################################
+User-agent: Googlebot-Voice
+Disallow: /yksityinen/
+Disallow: /tilapainen/
+Allow: /ukk/
+Allow: /yksinkertaiset-riitit/
+Allow: /neuvot/
+User-agent: Amazonbot        # Hypothétique pour Alexa
+Disallow: /yksityinen/
+Disallow: /tilapainen/
+Allow: /ukk/
+Allow: /neuvot/
+User-agent: Applebot         # Hypothétique pour Siri
+Disallow: /yksityinen/
+Disallow: /tilapainen/
+Allow: /ukk/
+Allow: /neuvot/
+
+###########################################
+# Bing (marché finlandais hors Google)    #
+###########################################
 User-agent: Bingbot
-Allow: /
+Disallow: /yksityinen/
+Disallow: /tilapainen/
 
-# Bloquer les robots nuisibles ou non désirés
-User-agent: BadBot
+#################################
+# Blocage des robots indésirables #
+#################################
+User-agent: AhrefsBot
 Disallow: /
-User-agent: EvilScraper
+User-agent: SemrushBot
+Disallow: /
+User-agent: MJ12bot
 Disallow: /
 
-# Empêcher l'exploration des fichiers sensibles
-Disallow: /config/
-Disallow: /backup/
+##################################################
+# Partenaires et analyseurs Google               #
+##################################################
+User-agent: Mediapartners-Google
+Disallow: /yksityinen/
+User-agent: AdsBot-Google
+Disallow: /yksityinen/
+
+##################################################
+# Crawlers IA émergents (anticipation 2025)     #
+##################################################
+User-agent: xAI-Crawler
+Disallow: /yksityinen/
+User-agent: OpenAI-Crawler
+Disallow: /yksityinen/
+User-agent: AnthropicBot
+Disallow: /yksityinen/
+User-agent: Qwantify         # Adaptation internationale
+Disallow: /yksityinen/
+
+##################################################
+# Optimisation avancée (mobile-first)           #
+##################################################
+User-agent: Googlebot-Mobile
+Disallow: /yksityinen/
+Disallow: /tilapainen/
+Allow: /riitit/
+Allow: /suojaus/
+Allow: /noituuden-poisto/
+
+##################
+# Sitemap et crawl #
+##################
+Sitemap: https://clairvoyancemedium.github.io/Noituuden-poisto-ja-suojautuminen-kirouksia-ja-loitsuja-vastaan.github.io/sitemap.xml
+Crawl-delay: 0.5
